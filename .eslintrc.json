@@ -1,4 +1,9 @@
 {
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "env": {
     "browser": true,
     "es2021": true
@@ -24,6 +29,8 @@
     "triple-slash-reference": "off",
     "strict-boolean-expressions": "off",
     "consistent-type-definitions": "off",
-    "return-await": "off"
+    "return-await": "off",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
   }
 }
