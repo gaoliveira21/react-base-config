@@ -50,7 +50,7 @@ module.exports = {
     publicPath: path.join(__dirname, 'public', 'build'),
     writeToDisk: true,
     historyApiFallback: true,
-    port: 3001,
+    port: 3000,
     open: true
   },
   plugins: [
