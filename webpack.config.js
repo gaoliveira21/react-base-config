@@ -6,9 +6,9 @@ module.exports = {
   mode: 'development',
   entry: './src/index.tsx',
   output: {
-    path: path.join(__dirname, 'public', 'js'),
-    publicPath: '/public/js',
-    filename: 'bundle.js'
+    path: path.join(__dirname, 'public', 'build'),
+    publicPath: path.join(__dirname, 'public', 'build'),
+    filename: 'app.bundle.js'
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.sass'],
@@ -30,13 +30,27 @@ module.exports = {
           { loader: 'css-loader', options: { modules: true } },
           { loader: 'sass-loader' }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: path.join(__dirname, 'public', 'build', 'assets'),
+              publicPath: path.join(__dirname, 'public', 'build', 'assets')
+            }
+          }
+        ]
       }
     ]
   },
   devServer: {
     contentBase: './public',
+    publicPath: path.join(__dirname, 'public', 'build'),
     writeToDisk: true,
     historyApiFallback: true,
+    port: 3001,
     open: true
   },
   plugins: [
