@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./.github/logo-react.svg">
+  <img src="./.github/logo-react.svg" width="250">
   <h1>React Base Config</h1>
 </p>
 
@@ -9,12 +9,12 @@ Configuração inicial para projeto React + TypeScript
 
 ## :hammer_and_wrench: Ferramentas
 
-- [git-commit-msg-linter](https://www.npmjs.com/package/git-commit-msg-linter)
-- [eslint](https://eslint.org/)
-- [typescript](https://www.typescriptlang.org/)
-- [husky](https://www.npmjs.com/package/husky)
-- [lint-staged](https://github.com/okonet/lint-staged)
-- [webpack](https://webpack.js.org/)
+- 🐸 [git-commit-msg-linter](https://www.npmjs.com/package/git-commit-msg-linter)
+- 👺 [eslint](https://eslint.org/)
+- 🦖 [typescript](https://www.typescriptlang.org/)
+- 🐶 [husky](https://www.npmjs.com/package/husky)
+- 🚫 [lint-staged](https://github.com/okonet/lint-staged)
+- 📦 [webpack](https://webpack.js.org/)
 
 ---
 
