@@ -12,7 +12,7 @@ Configuração inicial para projeto React + TypeScript
 - [X] Suporte a CSS Modules e Sass:
 
 ```javascript
-import css from './styles.sass'
+import css from './styles.scss'
 ```
 
 - [X] Suporte a importação de arquivos(jpg, jpeg, svg, png, gif):
