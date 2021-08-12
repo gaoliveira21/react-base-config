@@ -1,6 +1,11 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const webpack = require('webpack');
+const ReactRefreshTypeScript = require('react-refresh-typescript');
+
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   mode: 'development',
@@ -11,7 +16,7 @@ module.exports = {
     filename: 'app.bundle.js'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.sass'],
+    extensions: ['.ts', '.tsx', '.js', '.sass', 'scss'],
     alias: {
       '@': path.join(__dirname, 'src')
     }
@@ -20,8 +25,18 @@ module.exports = {
     rules: [
       {
         test: /\.ts(x?)$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: require.resolve('ts-loader'),
+            options: {
+              getCustomTransformers: () => ({
+                before: isDevelopment ? [ReactRefreshTypeScript()] : [],
+              }),
+              transpileOnly: isDevelopment,
+            },
+          },
+        ],
       },
       {
         test: /\.s(c|a)ss$/,
@@ -54,7 +69,9 @@ module.exports = {
     open: true
   },
   plugins: [
+    isDevelopment && new webpack.HotModuleReplacementPlugin(),
+    isDevelopment && new ReactRefreshWebpackPlugin(),
     new CleanWebpackPlugin(),
     new Dotenv()
-  ]
+  ].filter(Boolean)
 }
