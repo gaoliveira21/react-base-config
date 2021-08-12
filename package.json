@@ -5,7 +5,9 @@
   "author": "Gabriel Jose de Oliveira <gaoliveira211999@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --hot"
+    "prepare": "husky install",
+    "start": "webpack serve --hot",
+    "lint": "eslint src --max-warnings=0"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
@@ -21,9 +23,9 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
-    "git-commit-msg-linter": "^3.0.0",
-    "husky": "^4.3.6",
-    "lint-staged": "^10.5.3",
+    "git-commit-msg-linter": "^3.2.6",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
     "node-sass": "^5.0.0",
     "prettier": "^2.3.2",
     "sass-loader": "^10.1.0",
