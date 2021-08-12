@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
-    "start": "webpack serve --hot",
+    "dev": "webpack serve --hot",
     "lint": "eslint src --max-warnings=0"
   },
   "devDependencies": {
