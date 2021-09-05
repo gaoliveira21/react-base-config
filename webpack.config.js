@@ -48,7 +48,8 @@ module.exports = {
             options: {
               sassOptions: {
                 includePaths: [path.resolve(__dirname, 'src', 'styles')]
-              }
+              },
+              additionalData: '@import "main.scss";',
             }
           }
         ]
